@@ -1,0 +1,41 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "build",
+  "env": {
+    "REACT_APP_API_BASE_URL": "https://api.orecoin.app",
+    "REACT_APP_API_TIMEOUT": "10000",
+    "REACT_APP_ENABLE_MOCK_API": "true",
+    "REACT_APP_ANALYTICS_ID": "",
+    "REACT_APP_APP_NAME": "Orecoin",
+    "REACT_APP_APP_VERSION": "1.0.0",
+    "REACT_APP_ENVIRONMENT": "production",
+    "REACT_APP_DEFAULT_CURRENCY": "ORE",
+    "REACT_APP_CURRENCY_RATES_USD": "2.45",
+    "REACT_APP_MINING_UPDATE_INTERVAL": "5000"
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, s-maxage=3600"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
