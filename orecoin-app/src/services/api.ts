@@ -47,7 +47,7 @@ class ApiService {
   async get<T>(url: string, config?: AxiosRequestConfig): Promise<T> {
     try {
       const response = await this.api.get<ApiResponse<T>>(url, config);
-      return response.data.data || response.data;
+      return response.data.data as T;
     } catch (error) {
       throw this.handleError(error);
     }
@@ -56,7 +56,7 @@ class ApiService {
   async post<T>(url: string, data?: any, config?: AxiosRequestConfig): Promise<T> {
     try {
       const response = await this.api.post<ApiResponse<T>>(url, data, config);
-      return response.data.data || response.data;
+      return response.data.data as T;
     } catch (error) {
       throw this.handleError(error);
     }
@@ -65,7 +65,7 @@ class ApiService {
   async put<T>(url: string, data?: any, config?: AxiosRequestConfig): Promise<T> {
     try {
       const response = await this.api.put<ApiResponse<T>>(url, data, config);
-      return response.data.data || response.data;
+      return response.data.data as T;
     } catch (error) {
       throw this.handleError(error);
     }
@@ -74,7 +74,7 @@ class ApiService {
   async delete<T>(url: string, config?: AxiosRequestConfig): Promise<T> {
     try {
       const response = await this.api.delete<ApiResponse<T>>(url, config);
-      return response.data.data || response.data;
+      return response.data.data as T;
     } catch (error) {
       throw this.handleError(error);
     }
