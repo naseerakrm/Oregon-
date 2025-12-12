@@ -160,6 +160,35 @@ npm run build
 npm test
 ```
 
+## نشر على Vercel
+
+### متطلبات النشر
+- حساب Vercel (https://vercel.com)
+- تثبيت Vercel CLI (اختياري)
+- مستودع GitHub
+
+### خطوات النشر
+
+#### الطريقة 1: عبر واجهة Vercel الويب
+1. انتقل إلى https://vercel.com/dashboard
+2. اضغط "New Project"
+3. اختر مستودع GitHub الخاص بك
+4. اضغط "Import"
+5. سيتم اكتشاف الإعدادات تلقائياً
+6. اضغط "Deploy"
+
+#### الطريقة 2: عبر سطر الأوامر
+```bash
+# تثبيت Vercel CLI
+npm install -g vercel
+
+# نشر المشروع
+vercel
+```
+
+### متغيرات البيئة على Vercel
+جميع متغيرات البيئة المطلوبة محددة في `vercel.json` و `.env.example`
+
 ## بيانات تجريبية
 
 ### حساب تجريبي

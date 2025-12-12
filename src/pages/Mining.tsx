@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { 
   Play, 
-  Pause, 
   StopCircle, 
   TrendingUp, 
   Zap, 
   Clock, 
-  Users, 
-  Settings,
   ChevronRight
 } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
@@ -17,7 +14,7 @@ import Badge from '../components/ui/Badge';
 import Modal from '../components/ui/Modal';
 import { walletService } from '../services/wallet';
 import { MiningPool, MiningSession, MiningStatus } from '../types';
-import { formatNumber, formatRelativeTime, formatCurrency } from '../utils/cn';
+import { formatNumber, formatRelativeTime } from '../utils/cn';
 
 const Mining: React.FC = () => {
   const { user } = useAuth();

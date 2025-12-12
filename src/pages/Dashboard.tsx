@@ -17,7 +17,7 @@ import { useAuth } from '../contexts/AuthContext';
 import Card from '../components/ui/Card';
 import Badge from '../components/ui/Badge';
 import Button from '../components/ui/Button';
-import { formatCurrency, formatNumber, formatPercentage, getChangeColor } from '../utils/cn';
+import { formatCurrency, formatPercentage, getChangeColor } from '../utils/cn';
 import { walletService } from '../services/wallet';
 import { AnalyticsData, Wallet as WalletType, Currency } from '../types';
 
