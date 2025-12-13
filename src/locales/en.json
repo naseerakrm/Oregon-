@@ -1,0 +1,123 @@
+{
+  "app": {
+    "title": "Orecoin",
+    "subtitle": "Cryptocurrency Mining Platform"
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "wallet": "Wallet",
+    "mining": "Mining",
+    "transactions": "Transactions",
+    "logout": "Logout",
+    "profile": "Profile",
+    "settings": "Settings",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "auth": {
+    "login": {
+      "title": "Sign In",
+      "subtitle": "Enter your credentials to access your account",
+      "emailLabel": "Email",
+      "passwordLabel": "Password",
+      "emailPlaceholder": "example@domain.com",
+      "passwordPlaceholder": "Enter your password",
+      "rememberMe": "Remember me",
+      "forgotPassword": "Forgot password?",
+      "submitButton": "Sign In",
+      "loadingButton": "Signing in...",
+      "noAccount": "Don't have an account?",
+      "createAccount": "Create new account",
+      "demoCredentials": "For demo:",
+      "demoEmail": "Email: demo@orecoin.com",
+      "demoPassword": "Password: password123",
+      "errors": {
+        "emailRequired": "Email is required",
+        "emailInvalid": "Invalid email format",
+        "passwordRequired": "Password is required",
+        "passwordMinLength": "Password must be at least 6 characters"
+      }
+    },
+    "register": {
+      "title": "Create Account",
+      "subtitle": "Join Orecoin cryptocurrency mining platform",
+      "fullNameLabel": "Full Name",
+      "emailLabel": "Email",
+      "passwordLabel": "Password",
+      "confirmPasswordLabel": "Confirm Password",
+      "fullNamePlaceholder": "Enter your full name",
+      "emailPlaceholder": "example@domain.com",
+      "passwordPlaceholder": "Enter a strong password",
+      "confirmPasswordPlaceholder": "Re-enter password",
+      "hasAccount": "Already have an account?",
+      "loginLink": "Sign in",
+      "submitButton": "Create Account",
+      "loadingButton": "Creating account...",
+      "errors": {
+        "fullNameRequired": "Full name is required",
+        "fullNameMinLength": "Name must be at least 2 characters",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Invalid email format",
+        "passwordRequired": "Password is required",
+        "passwordMinLength": "Password must be at least 8 characters",
+        "passwordRequirements": "Password must contain letters and numbers",
+        "confirmPasswordRequired": "Password confirmation is required",
+        "passwordsMismatch": "Passwords do not match"
+      }
+    }
+  },
+  "dashboard": {
+    "welcome": "Welcome back,",
+    "overview": "Overview",
+    "walletBalance": "Wallet Balance",
+    "todayEarnings": "Today's Earnings",
+    "totalEarnings": "Total Earnings",
+    "miningPower": "Mining Power",
+    "activeMiners": "Active Miners",
+    "quickActions": "Quick Actions",
+    "sendCoins": "Send Coins",
+    "buyPower": "Buy Power",
+    "recentTransactions": "Recent Transactions",
+    "connected": "Connected",
+    "transactions": "Transactions",
+    "totalTransactions": "Total Transactions"
+  },
+  "common": {
+    "buttons": {
+      "save": "Save",
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "delete": "Delete",
+      "edit": "Edit",
+      "view": "View",
+      "close": "Close",
+      "back": "Back",
+      "next": "Next",
+      "previous": "Previous",
+      "submit": "Submit",
+      "loading": "Loading...",
+      "tryAgain": "Try again",
+      "refresh": "Refresh",
+      "copy": "Copy",
+      "download": "Download",
+      "share": "Share"
+    },
+    "currency": {
+      "ore": "ORE"
+    },
+    "validation": {
+      "required": "This field is required",
+      "invalidEmail": "Invalid email address"
+    },
+    "messages": {
+      "success": "Operation completed successfully!",
+      "error": "An error occurred",
+      "loading": "Loading..."
+    }
+  },
+  "language": {
+    "arabic": "العربية",
+    "english": "English",
+    "switchTo": "Switch to {{language}}"
+  }
+}

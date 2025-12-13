@@ -1,0 +1,123 @@
+{
+  "app": {
+    "title": "Orecoin",
+    "subtitle": "منصة تعدين العملات الرقمية"
+  },
+  "navigation": {
+    "dashboard": "لوحة التحكم",
+    "wallet": "المحفظة",
+    "mining": "التعدين",
+    "transactions": "المعاملات",
+    "logout": "تسجيل الخروج",
+    "profile": "الملف الشخصي",
+    "settings": "الإعدادات",
+    "menu": "القائمة",
+    "close": "إغلاق"
+  },
+  "auth": {
+    "login": {
+      "title": "تسجيل الدخول",
+      "subtitle": "أدخل بياناتك للوصول إلى حسابك",
+      "emailLabel": "البريد الإلكتروني",
+      "passwordLabel": "كلمة المرور",
+      "emailPlaceholder": "example@domain.com",
+      "passwordPlaceholder": "أدخل كلمة المرور",
+      "rememberMe": "تذكرني",
+      "forgotPassword": "نسيت كلمة المرور؟",
+      "submitButton": "تسجيل الدخول",
+      "loadingButton": "جاري تسجيل الدخول...",
+      "noAccount": "لا تملك حساباً؟",
+      "createAccount": "إنشاء حساب جديد",
+      "demoCredentials": "للتجربة:",
+      "demoEmail": "البريد الإلكتروني: demo@orecoin.com",
+      "demoPassword": "كلمة المرور: password123",
+      "errors": {
+        "emailRequired": "البريد الإلكتروني مطلوب",
+        "emailInvalid": "صيغة البريد الإلكتروني غير صحيحة",
+        "passwordRequired": "كلمة المرور مطلوبة",
+        "passwordMinLength": "كلمة المرور يجب أن تكون 6 أحرف على الأقل"
+      }
+    },
+    "register": {
+      "title": "إنشاء حساب جديد",
+      "subtitle": "انضم إلى منصة Orecoin لتعدين العملات الرقمية",
+      "fullNameLabel": "الاسم الكامل",
+      "emailLabel": "البريد الإلكتروني",
+      "passwordLabel": "كلمة المرور",
+      "confirmPasswordLabel": "تأكيد كلمة المرور",
+      "fullNamePlaceholder": "أدخل اسمك الكامل",
+      "emailPlaceholder": "example@domain.com",
+      "passwordPlaceholder": "أدخل كلمة مرور قوية",
+      "confirmPasswordPlaceholder": "أعد إدخال كلمة المرور",
+      "hasAccount": "تملك حساباً بالفعل؟",
+      "loginLink": "تسجيل الدخول",
+      "submitButton": "إنشاء الحساب",
+      "loadingButton": "جاري إنشاء الحساب...",
+      "errors": {
+        "fullNameRequired": "الاسم الكامل مطلوب",
+        "fullNameMinLength": "الاسم يجب أن يكون حرفين على الأقل",
+        "emailRequired": "البريد الإلكتروني مطلوب",
+        "emailInvalid": "صيغة البريد الإلكتروني غير صحيحة",
+        "passwordRequired": "كلمة المرور مطلوبة",
+        "passwordMinLength": "كلمة المرور يجب أن تكون 8 أحرف على الأقل",
+        "passwordRequirements": "يجب أن تحتوي كلمة المرور على أحرف وأرقام",
+        "confirmPasswordRequired": "تأكيد كلمة المرور مطلوب",
+        "passwordsMismatch": "كلمة المرور وتأكيدها غير متطابقين"
+      }
+    }
+  },
+  "dashboard": {
+    "welcome": "مرحباً بك،",
+    "overview": "نظرة عامة",
+    "walletBalance": "رصيد المحفظة",
+    "todayEarnings": "أرباح اليوم",
+    "totalEarnings": "إجمالي الأرباح",
+    "miningPower": "قوة التعدين",
+    "activeMiners": "المعدنين النشطين",
+    "quickActions": "إجراءات سريعة",
+    "sendCoins": "إرسال عملات",
+    "buyPower": "شراء قوة",
+    "recentTransactions": "المعاملات الأخيرة",
+    "connected": "متصل",
+    "transactions": "المعاملات",
+    "totalTransactions": "إجمالي المعاملات"
+  },
+  "common": {
+    "buttons": {
+      "save": "حفظ",
+      "cancel": "إلغاء",
+      "confirm": "تأكيد",
+      "delete": "حذف",
+      "edit": "تعديل",
+      "view": "عرض",
+      "close": "إغلاق",
+      "back": "رجوع",
+      "next": "التالي",
+      "previous": "السابق",
+      "submit": "إرسال",
+      "loading": "جاري التحميل...",
+      "tryAgain": "حاول مرة أخرى",
+      "refresh": "تحديث",
+      "copy": "نسخ",
+      "download": "تحميل",
+      "share": "مشاركة"
+    },
+    "currency": {
+      "ore": "أوري"
+    },
+    "validation": {
+      "required": "هذا الحقل مطلوب",
+      "invalidEmail": "بريد إلكتروني غير صحيح"
+    },
+    "messages": {
+      "success": "تمت العملية بنجاح!",
+      "error": "حدث خطأ ما",
+      "loading": "جاري التحميل..."
+    }
+  },
+  "language": {
+    "arabic": "العربية",
+    "english": "English",
+    "switchTo": "التبديل إلى {{language}}"
+  }
+}

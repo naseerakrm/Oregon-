@@ -14,15 +14,18 @@ import {
   X
 } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
+import { useLanguage } from '../hooks/useLanguage';
 import Card from '../components/ui/Card';
 import Badge from '../components/ui/Badge';
 import Button from '../components/ui/Button';
+import LanguageSwitcher from '../components/ui/LanguageSwitcher';
 import { formatCurrency, formatPercentage, getChangeColor } from '../utils/cn';
 import { walletService } from '../services/wallet';
 import { AnalyticsData, Wallet as WalletType, Currency } from '../types';
 
 const Dashboard: React.FC = () => {
   const { user, logout } = useAuth();
+  const { t, isRTL } = useLanguage();
   const [wallet, setWallet] = useState<WalletType | null>(null);
   const [analytics, setAnalytics] = useState<AnalyticsData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -76,12 +79,12 @@ const Dashboard: React.FC = () => {
 
       {/* Sidebar */}
       <div className={`
-        fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out
+        fixed inset-y-0 ${isRTL ? 'right-0' : 'left-0'} z-50 w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out
         lg:translate-x-0 lg:static lg:inset-0
-        ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}
+        ${sidebarOpen ? 'translate-x-0' : `${isRTL ? 'translate-x-full' : '-translate-x-full'}`}
       `}>
         <div className="flex items-center justify-between h-16 px-6 border-b border-dark-200">
-          <h1 className="text-xl font-bold text-primary-600">Orecoin</h1>
+          <h1 className="text-xl font-bold text-primary-600">{t('app.title')}</h1>
           <button
             onClick={() => setSidebarOpen(false)}
             className="lg:hidden text-dark-600 hover:text-dark-900"
@@ -96,29 +99,29 @@ const Dashboard: React.FC = () => {
               to="/dashboard"
               className="flex items-center px-4 py-2 text-primary-600 bg-primary-50 rounded-lg"
             >
-              <Activity size={20} className="mr-3" />
-              لوحة التحكم
+              <Activity size={20} className={`${isRTL ? 'ml-3' : 'mr-3'}`} />
+              {t('navigation.dashboard')}
             </Link>
             <Link
               to="/wallet"
               className="flex items-center px-4 py-2 text-dark-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors"
             >
-              <Wallet size={20} className="mr-3" />
-              المحفظة
+              <Wallet size={20} className={`${isRTL ? 'ml-3' : 'mr-3'}`} />
+              {t('navigation.wallet')}
             </Link>
             <Link
               to="/mining"
               className="flex items-center px-4 py-2 text-dark-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors"
             >
-              <TrendingUp size={20} className="mr-3" />
-              التعدين
+              <TrendingUp size={20} className={`${isRTL ? 'ml-3' : 'mr-3'}`} />
+              {t('navigation.mining')}
             </Link>
             <Link
               to="/transactions"
               className="flex items-center px-4 py-2 text-dark-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors"
             >
-              <Send size={20} className="mr-3" />
-              المعاملات
+              <Send size={20} className={`${isRTL ? 'ml-3' : 'mr-3'}`} />
+              {t('navigation.transactions')}
             </Link>
           </div>
 
@@ -128,22 +131,22 @@ const Dashboard: React.FC = () => {
                 to="/profile"
                 className="flex items-center px-4 py-2 text-dark-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors"
               >
-                <User size={20} className="mr-3" />
-                الملف الشخصي
+                <User size={20} className={`${isRTL ? 'ml-3' : 'mr-3'}`} />
+                {t('navigation.profile')}
               </Link>
               <Link
                 to="/settings"
                 className="flex items-center px-4 py-2 text-dark-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors"
               >
-                <Settings size={20} className="mr-3" />
-                الإعدادات
+                <Settings size={20} className={`${isRTL ? 'ml-3' : 'mr-3'}`} />
+                {t('navigation.settings')}
               </Link>
               <button
                 onClick={handleLogout}
                 className="w-full flex items-center px-4 py-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors"
               >
-                <LogOut size={20} className="mr-3" />
-                تسجيل الخروج
+                <LogOut size={20} className={`${isRTL ? 'ml-3' : 'mr-3'}`} />
+                {t('navigation.logout')}
               </button>
             </div>
           </div>
@@ -151,7 +154,7 @@ const Dashboard: React.FC = () => {
       </div>
 
       {/* Main content */}
-      <div className="lg:mr-64">
+      <div className={`${isRTL ? 'lg:ml-64' : 'lg:mr-64'}`}>
         {/* Header */}
         <header className="bg-white shadow-sm border-b border-dark-200">
           <div className="flex items-center justify-between h-16 px-6">
@@ -162,14 +165,15 @@ const Dashboard: React.FC = () => {
               >
                 <Menu size={24} />
               </button>
-              <h2 className="ml-4 text-xl font-semibold text-dark-900">
-                مرحباً، {user?.firstName}
+              <h2 className={`${isRTL ? 'mr-4' : 'ml-4'} text-xl font-semibold text-dark-900`}>
+                {t('dashboard.welcome')} {user?.firstName}
               </h2>
             </div>
             
             <div className="flex items-center space-x-4">
+              <LanguageSwitcher />
               <Badge variant="success">
-                <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
+                <div className={`w-2 h-2 bg-green-400 rounded-full ${isRTL ? 'ml-2' : 'mr-2'} animate-pulse`}></div>
                 متصل
               </Badge>
             </div>
