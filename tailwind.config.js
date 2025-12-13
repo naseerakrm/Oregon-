@@ -44,7 +44,12 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: [
+          'Inter', 
+          'Noto Sans Arabic', 
+          'system-ui', 
+          'sans-serif'
+        ],
         mono: ['JetBrains Mono', 'monospace'],
       },
       animation: {

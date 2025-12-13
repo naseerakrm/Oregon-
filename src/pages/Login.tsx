@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import { Eye, EyeOff, Mail, Lock, AlertCircle } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
+import { useLanguage } from '../hooks/useLanguage';
 import { Card, Button, Input } from '../components/ui';
+import LanguageSwitcher from '../components/ui/LanguageSwitcher';
 import { validateEmail } from '../utils/cn';
 
 const Login: React.FC = () => {
   const { login, isAuthenticated, isLoading, error, clearError } = useAuth();
+  const { t, isRTL } = useLanguage();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -22,15 +25,15 @@ const Login: React.FC = () => {
     const errors: Record<string, string> = {};
 
     if (!formData.email) {
-      errors.email = 'البريد الإلكتروني مطلوب';
+      errors.email = t('auth.login.errors.emailRequired');
     } else if (!validateEmail(formData.email)) {
-      errors.email = 'صيغة البريد الإلكتروني غير صحيحة';
+      errors.email = t('auth.login.errors.emailInvalid');
     }
 
     if (!formData.password) {
-      errors.password = 'كلمة المرور مطلوبة';
+      errors.password = t('auth.login.errors.passwordRequired');
     } else if (formData.password.length < 6) {
-      errors.password = 'كلمة المرور يجب أن تكون 6 أحرف على الأقل';
+      errors.password = t('auth.login.errors.passwordMinLength');
     }
 
     setFormErrors(errors);
@@ -61,61 +64,66 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 to-ore-50 flex items-center justify-center p-4">
+    <div className={`min-h-screen bg-gradient-to-br from-primary-50 to-ore-50 flex flex-col items-center justify-center p-4 ${isRTL ? 'rtl' : 'ltr'}`}>
+      {/* Language switcher */}
+      <div className={`absolute top-4 ${isRTL ? 'left-4' : 'right-4'}`}>
+        <LanguageSwitcher />
+      </div>
+      
       <div className="w-full max-w-md">
         {/* Logo and title */}
         <div className="text-center mb-8">
           <div className="mx-auto w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mb-4">
             <span className="text-white text-2xl font-bold">O</span>
           </div>
-          <h1 className="text-3xl font-bold text-dark-900 mb-2">Orecoin</h1>
-          <p className="text-dark-600">منصة تعدين العملات الرقمية</p>
+          <h1 className="text-3xl font-bold text-dark-900 mb-2">{t('app.title')}</h1>
+          <p className="text-dark-600">{t('app.subtitle')}</p>
         </div>
 
         <Card className="animate-fade-in">
           <div className="text-center mb-6">
-            <h2 className="text-2xl font-bold text-dark-900 mb-2">تسجيل الدخول</h2>
-            <p className="text-dark-600">أدخل بياناتك للوصول إلى حسابك</p>
+            <h2 className="text-2xl font-bold text-dark-900 mb-2">{t('auth.login.title')}</h2>
+            <p className="text-dark-600">{t('auth.login.subtitle')}</p>
           </div>
 
           {error && (
-            <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center">
-              <AlertCircle className="text-red-600 ml-2" size={20} />
+            <div className={`mb-4 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center ${isRTL ? 'flex-row-reverse' : ''}`}>
+              <AlertCircle className={`text-red-600 ${isRTL ? 'mr-2' : 'ml-2'}`} size={20} />
               <span className="text-red-600 text-sm">{error}</span>
             </div>
           )}
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <Input
-              label="البريد الإلكتروني"
+              label={t('auth.login.emailLabel')}
               type="email"
               name="email"
               value={formData.email}
               onChange={handleInputChange}
               error={formErrors.email}
               leftIcon={<Mail size={18} />}
-              placeholder="example@domain.com"
+              placeholder={t('auth.login.emailPlaceholder')}
               autoComplete="email"
               required
             />
 
             <div className="relative">
               <Input
-                label="كلمة المرور"
+                label={t('auth.login.passwordLabel')}
                 type={showPassword ? 'text' : 'password'}
                 name="password"
                 value={formData.password}
                 onChange={handleInputChange}
                 error={formErrors.password}
                 leftIcon={<Lock size={18} />}
-                placeholder="أدخل كلمة المرور"
+                placeholder={t('auth.login.passwordPlaceholder')}
                 autoComplete="current-password"
                 required
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute left-3 top-8 text-dark-400 hover:text-dark-600"
+                className={`absolute ${isRTL ? 'right-3' : 'left-3'} top-8 text-dark-400 hover:text-dark-600`}
               >
                 {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
               </button>
@@ -127,13 +135,13 @@ const Login: React.FC = () => {
                   type="checkbox"
                   className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-dark-300 rounded"
                 />
-                <span className="mr-2 text-sm text-dark-600">تذكرني</span>
+                <span className={`${isRTL ? 'mr-2' : 'ml-2'} text-sm text-dark-600`}>{t('auth.login.rememberMe')}</span>
               </label>
               <Link
                 to="/forgot-password"
                 className="text-sm text-primary-600 hover:text-primary-700"
               >
-                نسيت كلمة المرور؟
+                {t('auth.login.forgotPassword')}
               </Link>
             </div>
 
@@ -144,27 +152,27 @@ const Login: React.FC = () => {
               isLoading={isLoading}
               size="lg"
             >
-              {isLoading ? 'جاري تسجيل الدخول...' : 'تسجيل الدخول'}
+              {isLoading ? t('auth.login.loadingButton') : t('auth.login.submitButton')}
             </Button>
           </form>
 
           <div className="mt-6 text-center">
             <p className="text-dark-600">
-              لا تملك حساباً؟{' '}
+              {t('auth.login.noAccount')}{' '}
               <Link
                 to="/register"
                 className="text-primary-600 hover:text-primary-700 font-medium"
               >
-                إنشاء حساب جديد
+                {t('auth.login.createAccount')}
               </Link>
             </p>
           </div>
 
           {/* Demo credentials */}
           <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-            <h4 className="text-sm font-medium text-blue-900 mb-2">للتجربة:</h4>
-            <p className="text-sm text-blue-700">البريد الإلكتروني: demo@orecoin.com</p>
-            <p className="text-sm text-blue-700">كلمة المرور: password123</p>
+            <h4 className="text-sm font-medium text-blue-900 mb-2">{t('auth.login.demoCredentials')}</h4>
+            <p className="text-sm text-blue-700">{t('auth.login.demoEmail')}</p>
+            <p className="text-sm text-blue-700">{t('auth.login.demoPassword')}</p>
           </div>
         </Card>
       </div>

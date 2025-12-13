@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import { Eye, EyeOff, Mail, Lock, User, UserCheck, AlertCircle, CheckCircle } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
+import { useLanguage } from '../hooks/useLanguage';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import Input from '../components/ui/Input';
@@ -18,6 +19,7 @@ interface RegisterFormData {
 
 const Register: React.FC = () => {
   const { register, isAuthenticated, isLoading, error, clearError } = useAuth();
+  const { t, isRTL } = useLanguage();
   const [formData, setFormData] = useState<RegisterFormData>({
     firstName: '',
     lastName: '',
