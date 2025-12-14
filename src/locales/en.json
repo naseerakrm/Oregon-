@@ -41,11 +41,15 @@
     "register": {
       "title": "Create Account",
       "subtitle": "Join Orecoin cryptocurrency mining platform",
-      "fullNameLabel": "Full Name",
+      "firstNameLabel": "First Name",
+      "lastNameLabel": "Last Name",
+      "usernameLabel": "Username",
       "emailLabel": "Email",
       "passwordLabel": "Password",
       "confirmPasswordLabel": "Confirm Password",
-      "fullNamePlaceholder": "Enter your full name",
+      "firstNamePlaceholder": "John",
+      "lastNamePlaceholder": "Doe",
+      "usernamePlaceholder": "john_doe",
       "emailPlaceholder": "example@domain.com",
       "passwordPlaceholder": "Enter a strong password",
       "confirmPasswordPlaceholder": "Re-enter password",
@@ -53,14 +57,30 @@
       "loginLink": "Sign in",
       "submitButton": "Create Account",
       "loadingButton": "Creating account...",
+      "agreeTo": "I agree to",
+      "terms": "Terms of Use",
+      "and": "and",
+      "privacy": "Privacy Policy",
+      "passwordRequirementsTitle": "Password requirements:",
+      "passwordRequirements": {
+        "length": "At least 8 characters",
+        "upper": "At least one uppercase letter",
+        "lower": "At least one lowercase letter",
+        "number": "At least one number"
+      },
       "errors": {
-        "fullNameRequired": "Full name is required",
-        "fullNameMinLength": "Name must be at least 2 characters",
+        "firstNameRequired": "First name is required",
+        "firstNameMinLength": "First name must be at least 2 characters",
+        "lastNameRequired": "Last name is required",
+        "lastNameMinLength": "Last name must be at least 2 characters",
+        "usernameRequired": "Username is required",
+        "usernameMinLength": "Username must be at least 3 characters",
+        "usernameInvalid": "Username must contain only letters and numbers",
         "emailRequired": "Email is required",
         "emailInvalid": "Invalid email format",
         "passwordRequired": "Password is required",
         "passwordMinLength": "Password must be at least 8 characters",
-        "passwordRequirements": "Password must contain letters and numbers",
+        "passwordComplex": "Password must contain uppercase, lowercase and number",
         "confirmPasswordRequired": "Password confirmation is required",
         "passwordsMismatch": "Passwords do not match"
       }
@@ -69,18 +89,54 @@
   "dashboard": {
     "welcome": "Welcome back,",
     "overview": "Overview",
-    "walletBalance": "Wallet Balance",
-    "todayEarnings": "Today's Earnings",
-    "totalEarnings": "Total Earnings",
-    "miningPower": "Mining Power",
-    "activeMiners": "Active Miners",
-    "quickActions": "Quick Actions",
-    "sendCoins": "Send Coins",
-    "buyPower": "Buy Power",
-    "recentTransactions": "Recent Transactions",
-    "connected": "Connected",
-    "transactions": "Transactions",
-    "totalTransactions": "Total Transactions"
+    "stats": {
+      "walletBalance": "Wallet Balance",
+      "today": "Today",
+      "transactions": "Transactions",
+      "totalTransactions": "Total Transactions",
+      "miningRewards": "Mining Rewards",
+      "totalRewards": "Total Rewards",
+      "totalValue": "Total Value",
+      "thisWeek": "This week"
+    },
+    "quickActions": {
+      "title": "Quick Actions",
+      "send": "Send",
+      "receive": "Receive",
+      "mining": "Start Mining",
+      "exchange": "Exchange"
+    },
+    "networkStatus": {
+      "title": "Network Status",
+      "status": "Network Status",
+      "currentBlock": "Current Block",
+      "hashRate": "Hash Rate",
+      "nextBlockTime": "Time to Next Block",
+      "timeUnit": "min"
+    },
+    "recentTransactions": {
+      "title": "Recent Transactions",
+      "viewAll": "View All",
+      "table": {
+        "type": "Type",
+        "amount": "Amount",
+        "status": "Status",
+        "date": "Date"
+      },
+      "types": {
+        "receive": "Receive",
+        "mining": "Mining",
+        "send": "Send"
+      },
+      "status": {
+        "confirmed": "Confirmed"
+      },
+      "time": {
+        "today": "Today",
+        "yesterday": "Yesterday",
+        "daysAgo": "{{count}} days ago"
+      }
+    }
   },
   "common": {
     "buttons": {
