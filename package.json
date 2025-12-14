@@ -1,5 +1,6 @@
 {
   "name": "orecoin-app",
+  "description": "Orecoin - منصة تعدين العملات الرقمية",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
