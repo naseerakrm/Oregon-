@@ -41,11 +41,15 @@
     "register": {
       "title": "إنشاء حساب جديد",
       "subtitle": "انضم إلى منصة Orecoin لتعدين العملات الرقمية",
-      "fullNameLabel": "الاسم الكامل",
+      "firstNameLabel": "الاسم الأول",
+      "lastNameLabel": "اسم العائلة",
+      "usernameLabel": "اسم المستخدم",
       "emailLabel": "البريد الإلكتروني",
       "passwordLabel": "كلمة المرور",
       "confirmPasswordLabel": "تأكيد كلمة المرور",
-      "fullNamePlaceholder": "أدخل اسمك الكامل",
+      "firstNamePlaceholder": "أحمد",
+      "lastNamePlaceholder": "محمد",
+      "usernamePlaceholder": "ahmed_mohamed",
       "emailPlaceholder": "example@domain.com",
       "passwordPlaceholder": "أدخل كلمة مرور قوية",
       "confirmPasswordPlaceholder": "أعد إدخال كلمة المرور",
@@ -53,14 +57,30 @@
       "loginLink": "تسجيل الدخول",
       "submitButton": "إنشاء الحساب",
       "loadingButton": "جاري إنشاء الحساب...",
+      "agreeTo": "أوافق على",
+      "terms": "شروط الاستخدام",
+      "and": "و",
+      "privacy": "سياسة الخصوصية",
+      "passwordRequirementsTitle": "متطلبات كلمة المرور:",
+      "passwordRequirements": {
+        "length": "8 أحرف على الأقل",
+        "upper": "حرف كبير واحد على الأقل",
+        "lower": "حرف صغير واحد على الأقل",
+        "number": "رقم واحد على الأقل"
+      },
       "errors": {
-        "fullNameRequired": "الاسم الكامل مطلوب",
-        "fullNameMinLength": "الاسم يجب أن يكون حرفين على الأقل",
+        "firstNameRequired": "الاسم الأول مطلوب",
+        "firstNameMinLength": "الاسم الأول يجب أن يكون حرفين على الأقل",
+        "lastNameRequired": "اسم العائلة مطلوب",
+        "lastNameMinLength": "اسم العائلة يجب أن يكون حرفين على الأقل",
+        "usernameRequired": "اسم المستخدم مطلوب",
+        "usernameMinLength": "اسم المستخدم يجب أن يكون 3 أحرف على الأقل",
+        "usernameInvalid": "اسم المستخدم يجب أن يحتوي على أحرف وأرقام فقط",
         "emailRequired": "البريد الإلكتروني مطلوب",
         "emailInvalid": "صيغة البريد الإلكتروني غير صحيحة",
         "passwordRequired": "كلمة المرور مطلوبة",
         "passwordMinLength": "كلمة المرور يجب أن تكون 8 أحرف على الأقل",
-        "passwordRequirements": "يجب أن تحتوي كلمة المرور على أحرف وأرقام",
+        "passwordComplex": "كلمة المرور يجب أن تحتوي على حرف كبير وصغير ورقم",
         "confirmPasswordRequired": "تأكيد كلمة المرور مطلوب",
         "passwordsMismatch": "كلمة المرور وتأكيدها غير متطابقين"
       }
@@ -69,18 +89,54 @@
   "dashboard": {
     "welcome": "مرحباً بك،",
     "overview": "نظرة عامة",
-    "walletBalance": "رصيد المحفظة",
-    "todayEarnings": "أرباح اليوم",
-    "totalEarnings": "إجمالي الأرباح",
-    "miningPower": "قوة التعدين",
-    "activeMiners": "المعدنين النشطين",
-    "quickActions": "إجراءات سريعة",
-    "sendCoins": "إرسال عملات",
-    "buyPower": "شراء قوة",
-    "recentTransactions": "المعاملات الأخيرة",
-    "connected": "متصل",
-    "transactions": "المعاملات",
-    "totalTransactions": "إجمالي المعاملات"
+    "stats": {
+      "walletBalance": "رصيد المحفظة",
+      "today": "اليوم",
+      "transactions": "المعاملات",
+      "totalTransactions": "إجمالي المعاملات",
+      "miningRewards": "مكافآت التعدين",
+      "totalRewards": "إجمالي المكافآت",
+      "totalValue": "القيمة الإجمالية",
+      "thisWeek": "هذا الأسبوع"
+    },
+    "quickActions": {
+      "title": "إجراءات سريعة",
+      "send": "إرسال",
+      "receive": "استقبال",
+      "mining": "بدء التعدين",
+      "exchange": "تبادل"
+    },
+    "networkStatus": {
+      "title": "حالة الشبكة",
+      "status": "حالة الشبكة",
+      "currentBlock": "الكتلة الحالية",
+      "hashRate": "معدل الهاش",
+      "nextBlockTime": "الوقت حتى الكتلة التالية",
+      "timeUnit": "دقيقة"
+    },
+    "recentTransactions": {
+      "title": "المعاملات الأخيرة",
+      "viewAll": "عرض الكل",
+      "table": {
+        "type": "النوع",
+        "amount": "المبلغ",
+        "status": "الحالة",
+        "date": "التاريخ"
+      },
+      "types": {
+        "receive": "استقبال",
+        "mining": "تعدين",
+        "send": "إرسال"
+      },
+      "status": {
+        "confirmed": "مؤكد"
+      },
+      "time": {
+        "today": "اليوم",
+        "yesterday": "أمس",
+        "daysAgo": "منذ {{count}} أيام"
+      }
+    }
   },
   "common": {
     "buttons": {

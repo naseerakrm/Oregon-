@@ -61,7 +61,7 @@ const Dashboard: React.FC = () => {
       <div className="min-h-screen bg-dark-50 flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto"></div>
-          <p className="mt-4 text-dark-600">جاري التحميل...</p>
+          <p className="mt-4 text-dark-600">{t('common.messages.loading')}</p>
         </div>
       </div>
     );
@@ -174,7 +174,7 @@ const Dashboard: React.FC = () => {
               <LanguageSwitcher />
               <Badge variant="success">
                 <div className={`w-2 h-2 bg-green-400 rounded-full ${isRTL ? 'ml-2' : 'mr-2'} animate-pulse`}></div>
-                متصل
+                {t('dashboard.connected')}
               </Badge>
             </div>
           </div>
@@ -187,12 +187,12 @@ const Dashboard: React.FC = () => {
             <Card className="hover:scale-[1.02] transition-transform">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-dark-600">رصيد المحفظة</p>
+                  <p className="text-sm text-dark-600">{t('dashboard.stats.walletBalance')}</p>
                   <p className="text-2xl font-bold text-dark-900">
                     {wallet ? formatCurrency(wallet.balance, Currency.ORE) : '0'}
                   </p>
                   <p className={`text-sm ${getChangeColor(analytics?.performance24h || 0)}`}>
-                    {formatPercentage(analytics?.performance24h || 0)} اليوم
+                    {formatPercentage(analytics?.performance24h || 0)} {t('dashboard.stats.today')}
                   </p>
                 </div>
                 <div className="p-3 bg-primary-100 rounded-full">
@@ -204,11 +204,11 @@ const Dashboard: React.FC = () => {
             <Card className="hover:scale-[1.02] transition-transform">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-dark-600">المعاملات</p>
+                  <p className="text-sm text-dark-600">{t('dashboard.stats.transactions')}</p>
                   <p className="text-2xl font-bold text-dark-900">
                     {analytics?.totalTransactions || 0}
                   </p>
-                  <p className="text-sm text-dark-500">إجمالي المعاملات</p>
+                  <p className="text-sm text-dark-500">{t('dashboard.stats.totalTransactions')}</p>
                 </div>
                 <div className="p-3 bg-ore-100 rounded-full">
                   <Send className="h-8 w-8 text-ore-600" />
@@ -219,11 +219,11 @@ const Dashboard: React.FC = () => {
             <Card className="hover:scale-[1.02] transition-transform">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-dark-600">مكافآت التعدين</p>
+                  <p className="text-sm text-dark-600">{t('dashboard.stats.miningRewards')}</p>
                   <p className="text-2xl font-bold text-dark-900">
                     {analytics ? formatCurrency(analytics.miningRewards, Currency.ORE) : '0'}
                   </p>
-                  <p className="text-sm text-dark-500">إجمالي المكافآت</p>
+                  <p className="text-sm text-dark-500">{t('dashboard.stats.totalRewards')}</p>
                 </div>
                 <div className="p-3 bg-green-100 rounded-full">
                   <TrendingUp className="h-8 w-8 text-green-600" />
@@ -234,12 +234,12 @@ const Dashboard: React.FC = () => {
             <Card className="hover:scale-[1.02] transition-transform">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-dark-600">القيمة الإجمالية</p>
+                  <p className="text-sm text-dark-600">{t('dashboard.stats.totalValue')}</p>
                   <p className="text-2xl font-bold text-dark-900">
                     {analytics ? formatCurrency(analytics.portfolioValue, Currency.USD) : '$0'}
                   </p>
                   <p className={`text-sm ${getChangeColor(analytics?.performance7d || 0)}`}>
-                    {formatPercentage(analytics?.performance7d || 0)} هذا الأسبوع
+                    {formatPercentage(analytics?.performance7d || 0)} {t('dashboard.stats.thisWeek')}
                   </p>
                 </div>
                 <div className="p-3 bg-yellow-100 rounded-full">
@@ -252,53 +252,53 @@ const Dashboard: React.FC = () => {
           {/* Quick actions */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
             <Card>
-              <h3 className="text-lg font-semibold text-dark-900 mb-4">إجراءات سريعة</h3>
+              <h3 className="text-lg font-semibold text-dark-900 mb-4">{t('dashboard.quickActions.title')}</h3>
               <div className="grid grid-cols-2 gap-4">
                 <Link to="/send">
                   <Button variant="primary" fullWidth className="flex items-center justify-center">
                     <Send size={18} className="mr-2" />
-                    إرسال
+                    {t('dashboard.quickActions.send')}
                   </Button>
                 </Link>
                 <Link to="/receive">
                   <Button variant="outline" fullWidth className="flex items-center justify-center">
                     <TrendingDown size={18} className="mr-2" />
-                    استقبال
+                    {t('dashboard.quickActions.receive')}
                   </Button>
                 </Link>
                 <Link to="/mining">
                   <Button variant="secondary" fullWidth className="flex items-center justify-center">
                     <TrendingUp size={18} className="mr-2" />
-                    بدء التعدين
+                    {t('dashboard.quickActions.mining')}
                   </Button>
                 </Link>
                 <Link to="/exchange">
                   <Button variant="ghost" fullWidth className="flex items-center justify-center">
                     <DollarSign size={18} className="mr-2" />
-                    تبادل
+                    {t('dashboard.quickActions.exchange')}
                   </Button>
                 </Link>
               </div>
             </Card>
 
             <Card>
-              <h3 className="text-lg font-semibold text-dark-900 mb-4">حالة الشبكة</h3>
+              <h3 className="text-lg font-semibold text-dark-900 mb-4">{t('dashboard.networkStatus.title')}</h3>
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-dark-600">حالة الشبكة</span>
-                  <Badge variant="success">متصل</Badge>
+                  <span className="text-dark-600">{t('dashboard.networkStatus.status')}</span>
+                  <Badge variant="success">{t('dashboard.connected')}</Badge>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-dark-600">الكتلة الحالية</span>
+                  <span className="text-dark-600">{t('dashboard.networkStatus.currentBlock')}</span>
                   <span className="font-mono text-sm">#1,245,892</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-dark-600">معدل الهاش</span>
+                  <span className="text-dark-600">{t('dashboard.networkStatus.hashRate')}</span>
                   <span className="font-mono text-sm">1.2 EH/s</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-dark-600">الوقت حتى الكتلة التالية</span>
-                  <span className="font-mono text-sm">4 دقائق</span>
+                  <span className="text-dark-600">{t('dashboard.networkStatus.nextBlockTime')}</span>
+                  <span className="font-mono text-sm">4 {t('dashboard.networkStatus.timeUnit')}</span>
                 </div>
               </div>
             </Card>
@@ -307,9 +307,9 @@ const Dashboard: React.FC = () => {
           {/* Recent transactions */}
           <Card>
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-lg font-semibold text-dark-900">المعاملات الأخيرة</h3>
+              <h3 className="text-lg font-semibold text-dark-900">{t('dashboard.recentTransactions.title')}</h3>
               <Link to="/transactions">
-                <Button variant="ghost" size="sm">عرض الكل</Button>
+                <Button variant="ghost" size="sm">{t('dashboard.recentTransactions.viewAll')}</Button>
               </Link>
             </div>
             
@@ -317,10 +317,10 @@ const Dashboard: React.FC = () => {
               <table className="w-full">
                 <thead>
                   <tr className="border-b border-dark-200">
-                    <th className="text-right py-3 text-dark-600 font-medium">النوع</th>
-                    <th className="text-right py-3 text-dark-600 font-medium">المبلغ</th>
-                    <th className="text-right py-3 text-dark-600 font-medium">الحالة</th>
-                    <th className="text-right py-3 text-dark-600 font-medium">التاريخ</th>
+                    <th className="text-right py-3 text-dark-600 font-medium">{t('dashboard.recentTransactions.table.type')}</th>
+                    <th className="text-right py-3 text-dark-600 font-medium">{t('dashboard.recentTransactions.table.amount')}</th>
+                    <th className="text-right py-3 text-dark-600 font-medium">{t('dashboard.recentTransactions.table.status')}</th>
+                    <th className="text-right py-3 text-dark-600 font-medium">{t('dashboard.recentTransactions.table.date')}</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-dark-200">
@@ -330,14 +330,14 @@ const Dashboard: React.FC = () => {
                         <div className="p-2 bg-green-100 rounded-full mr-3">
                           <TrendingDown size={16} className="text-green-600" />
                         </div>
-                        <span className="text-dark-900">استقبال</span>
+                        <span className="text-dark-900">{t('dashboard.recentTransactions.types.receive')}</span>
                       </div>
                     </td>
                     <td className="py-4 text-dark-900 font-medium">+25.5 ORE</td>
                     <td className="py-4">
-                      <Badge variant="success">مؤكد</Badge>
+                      <Badge variant="success">{t('dashboard.recentTransactions.status.confirmed')}</Badge>
                     </td>
-                    <td className="py-4 text-dark-600">اليوم</td>
+                    <td className="py-4 text-dark-600">{t('dashboard.recentTransactions.time.today')}</td>
                   </tr>
                   <tr className="hover:bg-dark-50">
                     <td className="py-4">
@@ -345,14 +345,14 @@ const Dashboard: React.FC = () => {
                         <div className="p-2 bg-blue-100 rounded-full mr-3">
                           <TrendingUp size={16} className="text-blue-600" />
                         </div>
-                        <span className="text-dark-900">تعدين</span>
+                        <span className="text-dark-900">{t('dashboard.recentTransactions.types.mining')}</span>
                       </div>
                     </td>
                     <td className="py-4 text-dark-900 font-medium">+15.75 ORE</td>
                     <td className="py-4">
-                      <Badge variant="success">مؤكد</Badge>
+                      <Badge variant="success">{t('dashboard.recentTransactions.status.confirmed')}</Badge>
                     </td>
-                    <td className="py-4 text-dark-600">أمس</td>
+                    <td className="py-4 text-dark-600">{t('dashboard.recentTransactions.time.yesterday')}</td>
                   </tr>
                   <tr className="hover:bg-dark-50">
                     <td className="py-4">
@@ -360,14 +360,14 @@ const Dashboard: React.FC = () => {
                         <div className="p-2 bg-red-100 rounded-full mr-3">
                           <Send size={16} className="text-red-600" />
                         </div>
-                        <span className="text-dark-900">إرسال</span>
+                        <span className="text-dark-900">{t('dashboard.recentTransactions.types.send')}</span>
                       </div>
                     </td>
                     <td className="py-4 text-dark-900 font-medium">-15.25 ORE</td>
                     <td className="py-4">
-                      <Badge variant="success">مؤكد</Badge>
+                      <Badge variant="success">{t('dashboard.recentTransactions.status.confirmed')}</Badge>
                     </td>
-                    <td className="py-4 text-dark-600">منذ 2 أيام</td>
+                    <td className="py-4 text-dark-600">{t('dashboard.recentTransactions.time.daysAgo', { count: 2 })}</td>
                   </tr>
                 </tbody>
               </table>

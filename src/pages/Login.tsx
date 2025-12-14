@@ -66,7 +66,7 @@ const Login: React.FC = () => {
   return (
     <div className={`min-h-screen bg-gradient-to-br from-primary-50 to-ore-50 flex flex-col items-center justify-center p-4 ${isRTL ? 'rtl' : 'ltr'}`}>
       {/* Language switcher */}
-      <div className={`absolute top-4 ${isRTL ? 'left-4' : 'right-4'}`}>
+      <div className="absolute top-4 end-4">
         <LanguageSwitcher />
       </div>
       
@@ -123,7 +123,7 @@ const Login: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className={`absolute ${isRTL ? 'right-3' : 'left-3'} top-8 text-dark-400 hover:text-dark-600`}
+                className="absolute end-3 top-8 text-dark-400 hover:text-dark-600"
               >
                 {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
               </button>

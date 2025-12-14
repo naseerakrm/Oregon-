@@ -40,7 +40,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         
         <div className="relative">
           {leftIcon && (
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <div className="absolute inset-y-0 start-0 ps-3 flex items-center pointer-events-none">
               <span className="text-dark-400 text-sm">{leftIcon}</span>
             </div>
           )}
@@ -54,8 +54,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
               'focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent',
               'transition-colors duration-200',
               'disabled:bg-dark-50 disabled:text-dark-500 disabled:cursor-not-allowed',
-              leftIcon && 'pl-10',
-              rightIcon && 'pr-10',
+              leftIcon && 'ps-10',
+              rightIcon && 'pe-10',
               error && 'border-red-500 focus:ring-red-500',
               className
             )}
@@ -63,7 +63,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           />
           
           {rightIcon && (
-            <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+            <div className="absolute inset-y-0 end-0 pe-3 flex items-center pointer-events-none">
               <span className="text-dark-400 text-sm">{rightIcon}</span>
             </div>
           )}
