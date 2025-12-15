@@ -1,0 +1,24 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FEDC56;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#996515;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bronzeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8A870;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B4513;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Simple Background -->
+  <rect x="0" y="0" width="512" height="512" rx="128" fill="url(#goldGradient)" />
+  
+  <!-- Ziggurat (Scaled Up and Centered) -->
+  <g transform="translate(56, 56) scale(0.8)">
+    <path d="M 120 350 L 392 350 L 370 290 L 142 290 Z" fill="url(#bronzeGradient)" stroke="#5A3A20" stroke-width="4"/>
+    <path d="M 152 290 L 360 290 L 345 240 L 167 240 Z" fill="url(#bronzeGradient)" stroke="#5A3A20" stroke-width="4"/>
+    <path d="M 180 240 L 332 240 L 320 200 L 192 200 Z" fill="url(#bronzeGradient)" stroke="#5A3A20" stroke-width="4"/>
+    <rect x="220" y="170" width="72" height="30" fill="url(#bronzeGradient)" stroke="#5A3A20" stroke-width="4"/>
+    <path d="M 236 350 L 276 350 L 266 170 L 246 170 Z" fill="#FEDC56" stroke="#5A3A20" stroke-width="2"/>
+  </g>
+</svg>

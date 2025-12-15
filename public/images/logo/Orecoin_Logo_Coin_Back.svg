@@ -1,0 +1,75 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Coin Gradient -->
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FEDC56;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#D4AF37;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#996515;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bronzeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8A870;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#CD7F32;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B4513;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Coin Base -->
+  <circle cx="256" cy="256" r="250" fill="url(#goldGradient)" stroke="#8B4513" stroke-width="4" />
+  
+  <!-- Inner Rim -->
+  <circle cx="256" cy="256" r="200" fill="none" stroke="#8B4513" stroke-width="3" stroke-dasharray="10 5" />
+  
+  <!-- Central Area Background -->
+  <circle cx="256" cy="256" r="195" fill="#Fdf5e6" opacity="0.1" />
+
+  <!-- Gilgamesh Representation -->
+  <g transform="translate(0, 20)" filter="url(#shadow)">
+     <!-- Body (Tunic) -->
+     <path d="M 220 180 L 292 180 L 300 350 L 212 350 Z" fill="url(#bronzeGradient)" stroke="#5A3A20" stroke-width="2" />
+     
+     <!-- Head -->
+     <circle cx="256" cy="140" r="30" fill="url(#bronzeGradient)" stroke="#5A3A20" stroke-width="2" />
+     
+     <!-- Beard (Mesopotamian Style) -->
+     <path d="M 256 160 L 256 190 L 276 190 L 276 155 Z" fill="#5A3A20" />
+     <rect x="240" y="160" width="36" height="30" rx="5" fill="#5A3A20" />
+
+     <!-- Crown/Hat -->
+     <path d="M 230 125 L 282 125 L 270 90 L 242 90 Z" fill="url(#bronzeGradient)" stroke="#5A3A20" stroke-width="2" />
+
+     <!-- Arms holding Lion -->
+     <!-- Left Arm -->
+     <path d="M 220 190 L 180 220 L 200 240" fill="none" stroke="#5A3A20" stroke-width="8" stroke-linecap="round"/>
+     <!-- Right Arm -->
+     <path d="M 292 190 L 332 220 L 312 240" fill="none" stroke="#5A3A20" stroke-width="8" stroke-linecap="round"/>
+
+     <!-- Lion (Stylized) Left -->
+     <g transform="translate(160, 220)">
+        <path d="M 10 0 Q 30 -10 40 10 T 40 50 L 20 80 L 0 50 Z" fill="#CD7F32" stroke="#5A3A20" stroke-width="2" />
+        <circle cx="25" cy="15" r="5" fill="#5A3A20" /> <!-- Eye -->
+     </g>
+  </g>
+
+  <!-- Text Paths -->
+  <!-- Upper Curve -->
+  <path id="upperCurve" d="M 76,256 A 180,180 0 0,1 436,256" fill="none" />
+  <!-- Lower Curve -->
+  <path id="lowerCurve" d="M 76,256 A 180,180 0 0,0 436,256" fill="none" />
+
+  <!-- Text -->
+  <text font-family="serif" font-size="36" font-weight="bold" fill="#5A3A20" text-anchor="middle">
+    <textPath href="#upperCurve" startOffset="50%" side="left">KING GILGAMESH</textPath>
+  </text>
+  
+  <text font-family="serif" font-size="36" font-weight="bold" fill="#5A3A20" text-anchor="middle">
+    <textPath href="#lowerCurve" startOffset="50%" side="left">الملك كلكامش</textPath>
+  </text>
+  
+  <!-- Decorative Stars/Dots -->
+  <circle cx="76" cy="256" r="6" fill="#5A3A20" />
+  <circle cx="436" cy="256" r="6" fill="#5A3A20" />
+
+</svg>

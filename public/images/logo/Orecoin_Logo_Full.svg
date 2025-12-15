@@ -1,0 +1,72 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Coin Gradient -->
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FEDC56;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#D4AF37;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#996515;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bronzeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8A870;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#CD7F32;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B4513;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Coin Base -->
+  <circle cx="256" cy="256" r="250" fill="url(#goldGradient)" stroke="#8B4513" stroke-width="4" />
+  
+  <!-- Inner Rim -->
+  <circle cx="256" cy="256" r="200" fill="none" stroke="#8B4513" stroke-width="3" stroke-dasharray="10 5" />
+  
+  <!-- Central Area Background -->
+  <circle cx="256" cy="256" r="195" fill="#Fdf5e6" opacity="0.1" />
+
+  <!-- Ziggurat of Ur Representation -->
+  <g transform="translate(0, 20)" filter="url(#shadow)">
+    <!-- Base Tier -->
+    <path d="M 120 350 L 392 350 L 370 290 L 142 290 Z" fill="url(#bronzeGradient)" stroke="#5A3A20" stroke-width="2"/>
+    <!-- Middle Tier -->
+    <path d="M 152 290 L 360 290 L 345 240 L 167 240 Z" fill="url(#bronzeGradient)" stroke="#5A3A20" stroke-width="2"/>
+    <!-- Top Tier -->
+    <path d="M 180 240 L 332 240 L 320 200 L 192 200 Z" fill="url(#bronzeGradient)" stroke="#5A3A20" stroke-width="2"/>
+    <!-- Top Temple -->
+    <rect x="220" y="170" width="72" height="30" fill="url(#bronzeGradient)" stroke="#5A3A20" stroke-width="2"/>
+    
+    <!-- Central Stairs -->
+    <path d="M 236 350 L 276 350 L 266 170 L 246 170 Z" fill="#D4AF37" stroke="#5A3A20" stroke-width="1"/>
+    
+    <!-- Stair lines -->
+    <line x1="240" y1="330" x2="272" y2="330" stroke="#5A3A20" stroke-width="1" />
+    <line x1="241" y1="310" x2="271" y2="310" stroke="#5A3A20" stroke-width="1" />
+    <line x1="242" y1="290" x2="270" y2="290" stroke="#5A3A20" stroke-width="1" />
+    <line x1="243" y1="270" x2="269" y2="270" stroke="#5A3A20" stroke-width="1" />
+    <line x1="244" y1="250" x2="268" y2="250" stroke="#5A3A20" stroke-width="1" />
+    <line x1="245" y1="230" x2="267" y2="230" stroke="#5A3A20" stroke-width="1" />
+    <line x1="246" y1="210" x2="266" y2="210" stroke="#5A3A20" stroke-width="1" />
+    <line x1="247" y1="190" x2="265" y2="190" stroke="#5A3A20" stroke-width="1" />
+  </g>
+
+  <!-- Text Paths -->
+  <!-- Upper Curve for English -->
+  <path id="upperCurve" d="M 76,256 A 180,180 0 0,1 436,256" fill="none" />
+  <!-- Lower Curve for Arabic (flipped) -->
+  <path id="lowerCurve" d="M 76,256 A 180,180 0 0,0 436,256" fill="none" />
+
+  <!-- Text -->
+  <text font-family="serif" font-size="48" font-weight="bold" fill="#5A3A20" text-anchor="middle">
+    <textPath href="#upperCurve" startOffset="50%" side="left">ORECOIN</textPath>
+  </text>
+  
+  <text font-family="serif" font-size="42" font-weight="bold" fill="#5A3A20" text-anchor="middle">
+    <textPath href="#lowerCurve" startOffset="50%" side="left">أوركوين</textPath>
+  </text>
+  
+  <!-- Decorative Stars/Dots -->
+  <circle cx="76" cy="256" r="8" fill="#5A3A20" />
+  <circle cx="436" cy="256" r="8" fill="#5A3A20" />
+
+</svg>
