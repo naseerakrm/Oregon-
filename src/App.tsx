@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
+import { ProtocolProvider } from './contexts/ProtocolContext';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
@@ -47,9 +48,10 @@ const PublicRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 function App() {
   return (
     <AuthProvider>
-      <Router>
-        <div className="App">
-          <Routes>
+      <ProtocolProvider>
+        <Router>
+          <div className="App">
+            <Routes>
             {/* Public routes */}
             <Route
               path="/login"
@@ -110,8 +112,9 @@ function App() {
           </Routes>
         </div>
       </Router>
-    </AuthProvider>
-  );
-}
+      </ProtocolProvider>
+      </AuthProvider>
+      );
+      }
 
 export default App;

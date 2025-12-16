@@ -112,7 +112,10 @@
       "currentBlock": "الكتلة الحالية",
       "hashRate": "معدل الهاش",
       "nextBlockTime": "الوقت حتى الكتلة التالية",
-      "timeUnit": "دقيقة"
+      "timeUnit": "دقيقة",
+      "activeMiners": "المعدنون النشطون",
+      "difficulty": "الصعوبة",
+      "nextHalving": "الانقسام التالي"
     },
     "recentTransactions": {
       "title": "المعاملات الأخيرة",
@@ -136,6 +139,57 @@
         "yesterday": "أمس",
         "daysAgo": "منذ {{count}} أيام"
       }
+    }
+  },
+  "mining": {
+    "title": "التعدين",
+    "subtitle": "ابدأ في تعدين عملة ORE",
+    "start": "بدء التعدين",
+    "stop": "إيقاف التعدين",
+    "active": "التعدين نشط",
+    "inactive": "التعدين متوقف",
+    "pool": "مجموعة التعدين",
+    "solo": "تعدين فردي",
+    "device": "الجهاز",
+    "hashRate": "معدل الهاش",
+    "rewards": "المكافآت",
+    "efficiency": "الكفاءة",
+    "resilience": "المرونة",
+    "luck": "الحظ",
+    "mode": "الوضع",
+    "deviceType": "نوع الجهاز",
+    "selectPool": "اختر مجموعة",
+    "poolStats": "إحصائيات المجموعة",
+    "miners": "المعدنون",
+    "fee": "الرسوم",
+    "fairness": "العدالة",
+    "fairnessScore": "نقاط العدالة",
+    "fairnessDesc": "معدل بناءً على قدرات الجهاز",
+    "deviceCapabilities": {
+      "mobile": "هاتف",
+      "tablet": "جهاز لوحي",
+      "desktop": "كمبيوتر",
+      "rig": "جهاز تعدين"
+    }
+  },
+  "dna": {
+    "title": "ملف الحمض النووي",
+    "fingerprint": "البصمة الرقمية",
+    "lineage": "سلالة النسب",
+    "generation": "الجيل",
+    "traits": "السمات",
+    "resilience": "المرونة",
+    "efficiency": "الكفاءة",
+    "luck": "الحظ",
+    "contribution": "المساهمة"
+  },
+  "security": {
+    "alerts": "تنبيهات الأمان",
+    "noAlerts": "لا توجد تنبيهات أمان",
+    "level": {
+      "info": "معلومة",
+      "warning": "تحذير",
+      "critical": "حرج"
     }
   },
   "common": {

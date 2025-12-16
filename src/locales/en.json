@@ -112,7 +112,10 @@
       "currentBlock": "Current Block",
       "hashRate": "Hash Rate",
       "nextBlockTime": "Time to Next Block",
-      "timeUnit": "min"
+      "timeUnit": "min",
+      "activeMiners": "Active Miners",
+      "difficulty": "Difficulty",
+      "nextHalving": "Next Halving"
     },
     "recentTransactions": {
       "title": "Recent Transactions",
@@ -136,6 +139,57 @@
         "yesterday": "Yesterday",
         "daysAgo": "{{count}} days ago"
       }
+    }
+  },
+  "mining": {
+    "title": "Mining",
+    "subtitle": "Start mining ORE coin",
+    "start": "Start Mining",
+    "stop": "Stop Mining",
+    "active": "Mining Active",
+    "inactive": "Not Mining",
+    "pool": "Mining Pool",
+    "solo": "Solo Mining",
+    "device": "Device",
+    "hashRate": "Hash Rate",
+    "rewards": "Rewards",
+    "efficiency": "Efficiency",
+    "resilience": "Resilience",
+    "luck": "Luck",
+    "mode": "Mode",
+    "deviceType": "Device Type",
+    "selectPool": "Select Pool",
+    "poolStats": "Pool Statistics",
+    "miners": "Miners",
+    "fee": "Fee",
+    "fairness": "Fairness",
+    "fairnessScore": "Fairness Score",
+    "fairnessDesc": "Adjusted based on device capabilities",
+    "deviceCapabilities": {
+      "mobile": "Mobile",
+      "tablet": "Tablet",
+      "desktop": "Desktop",
+      "rig": "Mining Rig"
+    }
+  },
+  "dna": {
+    "title": "DNA Profile",
+    "fingerprint": "Digital Fingerprint",
+    "lineage": "Ancestry Lineage",
+    "generation": "Generation",
+    "traits": "Traits",
+    "resilience": "Resilience",
+    "efficiency": "Efficiency",
+    "luck": "Luck",
+    "contribution": "Contribution"
+  },
+  "security": {
+    "alerts": "Security Alerts",
+    "noAlerts": "No security alerts",
+    "level": {
+      "info": "Info",
+      "warning": "Warning",
+      "critical": "Critical"
     }
   },
   "common": {
