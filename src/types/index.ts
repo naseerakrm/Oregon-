@@ -114,6 +114,53 @@ export enum MiningStatus {
   FAILED = 'failed',
 }
 
+export enum MiningMode {
+  SOLO = 'solo',
+  POOL = 'pool',
+}
+
+export enum DeviceType {
+  MOBILE = 'mobile',
+  TABLET = 'tablet',
+  DESKTOP = 'desktop',
+  RIG = 'rig',
+}
+
+export interface DnaProfile {
+  id: string;
+  userId: string;
+  fingerprint: string;
+  traits: {
+    resilience: number;
+    efficiency: number;
+    luck: number;
+  };
+  lineage: DnaLineage[];
+  createdAt: Date;
+}
+
+export interface DnaLineage {
+  generation: number;
+  ancestorId: string;
+  contribution: number;
+}
+
+export interface SecurityAlert {
+  id: string;
+  type: 'info' | 'warning' | 'critical';
+  message: string;
+  timestamp: Date;
+  isRead: boolean;
+}
+
+export interface ProtocolState {
+  globalHashRate: number;
+  activeMiners: number;
+  currentBlock: number;
+  nextHalving: Date;
+  difficulty: number;
+}
+
 // Market and Price Types
 export interface PriceData {
   currency: Currency;

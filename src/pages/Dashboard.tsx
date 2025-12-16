@@ -11,20 +11,23 @@ import {
   User,
   LogOut,
   Menu,
-  X
+  X,
+  AlertTriangle
 } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
+import { useProtocol } from '../contexts/ProtocolContext';
 import { useLanguage } from '../hooks/useLanguage';
 import Card from '../components/ui/Card';
 import Badge from '../components/ui/Badge';
 import Button from '../components/ui/Button';
 import LanguageSwitcher from '../components/ui/LanguageSwitcher';
-import { formatCurrency, formatPercentage, getChangeColor } from '../utils/cn';
+import { formatCurrency, formatPercentage, getChangeColor, formatNumber, formatRelativeTime } from '../utils/cn';
 import { walletService } from '../services/wallet';
 import { AnalyticsData, Wallet as WalletType, Currency } from '../types';
 
 const Dashboard: React.FC = () => {
   const { user, logout } = useAuth();
+  const { securityAlerts, protocolState } = useProtocol();
   const { t, isRTL } = useLanguage();
   const [wallet, setWallet] = useState<WalletType | null>(null);
   const [analytics, setAnalytics] = useState<AnalyticsData | null>(null);
@@ -182,6 +185,24 @@ const Dashboard: React.FC = () => {
 
         {/* Dashboard content */}
         <main className="p-6">
+          {/* Security Alerts */}
+          {securityAlerts.length > 0 && (
+            <Card className="mb-6 border-s-4 border-s-red-500 bg-red-50">
+              <div className="flex items-center mb-4">
+                <AlertTriangle className="text-red-500 me-2" size={20} />
+                <h3 className="text-lg font-semibold text-dark-900">{t('security.alerts')}</h3>
+              </div>
+              <div className="space-y-3">
+                  {securityAlerts.map(alert => (
+                      <div key={alert.id} className="bg-white p-3 rounded shadow-sm border border-red-100">
+                          <p className="font-medium text-dark-900">{alert.message}</p>
+                          <p className="text-xs text-dark-500 mt-1">{formatRelativeTime(new Date(alert.timestamp))}</p>
+                      </div>
+                  ))}
+              </div>
+            </Card>
+          )}
+
           {/* Quick stats */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             <Card className="hover:scale-[1.02] transition-transform">
@@ -290,15 +311,21 @@ const Dashboard: React.FC = () => {
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-dark-600">{t('dashboard.networkStatus.currentBlock')}</span>
-                  <span className="font-mono text-sm">#1,245,892</span>
+                  <span className="font-mono text-sm">
+                    {protocolState ? `#${formatNumber(protocolState.currentBlock)}` : 'Loading...'}
+                  </span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-dark-600">{t('dashboard.networkStatus.hashRate')}</span>
-                  <span className="font-mono text-sm">1.2 EH/s</span>
+                  <span className="font-mono text-sm">
+                    {protocolState ? `${formatNumber(protocolState.globalHashRate)} H/s` : 'Loading...'}
+                  </span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-dark-600">{t('dashboard.networkStatus.nextBlockTime')}</span>
-                  <span className="font-mono text-sm">4 {t('dashboard.networkStatus.timeUnit')}</span>
+                  <span className="text-dark-600">{t('dashboard.networkStatus.activeMiners')}</span>
+                  <span className="font-mono text-sm">
+                    {protocolState ? formatNumber(protocolState.activeMiners) : 'Loading...'}
+                  </span>
                 </div>
               </div>
             </Card>
